@@ -30,7 +30,7 @@ $('#miBoton').on('click', function (e) {
         // Imprimir Token
         $.ajax({
            type: 'POST',
-           url: '../validar_producion_culqi/culqi-php-develop/examples/02-create-charge.php',
+           url: '../culqi-php-develop/examples/02-create-charge.php',
            data: { token: Culqi.token.id , moneda , secreta },
            datatype: 'json',
            success: function(data) {
