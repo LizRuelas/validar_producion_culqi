@@ -22,15 +22,7 @@ try {
         "amount" => 100,
         "currency_code" =>$_POST["moneda"],
         "email" => "validar@culqi.com",
-        "source_id" => $_POST["token"] ,
-        "antifraud_details" => array(
-            "address" =>"Calle Narciso de la Colina 421",
-            "address_city"=> "Lima",
-            "country_code" => "PE",
-            "first_name" => "Test",
-            "last_name" => "Culqi",
-            "phone_number" => 123456789
-            )
+        "source_id" => $_POST["token"] 
         )
   );
   // Response
