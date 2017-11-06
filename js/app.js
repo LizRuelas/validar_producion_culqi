@@ -31,7 +31,7 @@ $('#miBoton').on('click', function (e) {
         $.ajax({
            type: 'POST',
            url: '../culqi-php-develop/examples/02-create-charge.php',
-           data: { token: Culqi.token.id , moneda , secreta },
+           data: { token: Culqi.token.id , moneda , secreta , email: Culqi.token.email},
            datatype: 'json',
            success: function(data) {
              var result = "";

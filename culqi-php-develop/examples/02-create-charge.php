@@ -21,8 +21,8 @@ try {
       array(
         "amount" => 100,
         "currency_code" =>$_POST["moneda"],
-        "email" => "validar@culqi.com",
-        "source_id" => $_POST["token"] 
+        "email" => $_POST["email"],
+        "source_id" => $_POST["token"]
         )
   );
   // Response
