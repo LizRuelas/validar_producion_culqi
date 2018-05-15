@@ -1,5 +1,6 @@
 var moneda;
 $("#response-panel").hide();
+$("#response-panel-1").hide();
 $('#miBoton').on('click', function (e) {
     // Abre el formulario con las opciones de Culqi.settings
     if ($('#currency_code').is(":checked"))
@@ -15,7 +16,7 @@ $('#miBoton').on('click', function (e) {
       title: 'Culqi Store',
       currency: moneda,
       description: 'Polo/remera Culqi lover',
-      amount: 100
+      amount: 300
      });
     Culqi.open();
     e.preventDefault();
@@ -31,7 +32,7 @@ $('#miBoton').on('click', function (e) {
         $.ajax({
            type: 'POST',
            url: '../culqi-php-develop/examples/02-create-charge.php',
-           data: { token: Culqi.token.id , moneda , secreta , email: Culqi.token.email},
+           data: { token: Culqi.token.id , moneda , secreta },
            datatype: 'json',
            success: function(data) {
              var result = "";
@@ -42,10 +43,12 @@ $('#miBoton').on('click', function (e) {
                  result = JSON.parse(JSON.stringify(data));
              }
              if(result.object === 'charge'){
-                resultdiv(result.outcome.user_message);
+                resultdiv(result.outcome.merchant_message);
+                resultdiv1(result.outcome.user_message);
              }
              if(result.object === 'error'){
-                resultdiv(result.user_message);
+                resultdiv(result.merchant_message);
+                resultdiv1(result.user_message);
              }
            },
            error: function(error) {
@@ -63,13 +66,19 @@ $('#miBoton').on('click', function (e) {
   function run_waitMe(){
     $('body').waitMe({
       effect: 'orbit',
-      text: 'Procesando pago...',
+      text: 'VALIDACIÓN DE COMERCIO EN PRODUCCIÓN...',
       bg: 'rgba(255,255,255,0.7)',
-      color:'#28d2c8'
+      color:'#FF0000'
     });
   }
   function resultdiv(message){
     $('#response-panel').show();
     $('#response').html(message);
+    $('body').waitMe('hide');
+  }
+
+  function resultdiv1(message1){
+    $('#response-panel-1').show();
+    $('#response-1').html(message1);
     $('body').waitMe('hide');
   }

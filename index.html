@@ -14,25 +14,32 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="text-center" >Validación Culqi - v2</h1><br><br>
+      <h1 class="text-center" >Validación Culqi - V2</h1><br><br>
       <form>
         <div class="form-group">
           <label for="usr">Llave Publica:</label>
-          <input id="publica" type="text" class="form-control" ><br>
+          <input id="publica" type="text" class="form-control" style="width:50%"><br>
           <label for="pwd">Llave Secreta:</label>
-          <input id="secreta" type="text" class="form-control" >
+          <input id="secreta" type="text" class="form-control"  style="width:50%" >
         </div><br><br>
 
         <input id="currency_code" type="checkbox" name="moneda" data-on="Soles" data-off="Dólares"  checked data-toggle="toggle">
 
       </form><br><br><br>
-      <a id="miBoton" class="btn btn-primary" href="#" >Pagar con Culqi Checkout</a>
+      <a id="miBoton" class="btn btn-success" href="#" >Pagar con Culqi Checkout</a>
       <br/><br/><br/>
       <div class="panel panel-default" id="response-panel">
-        <div class="panel-heading">Response</div>
+        <div class="panel-heading"><label>merchant_message</label></div>
         <div class="panel-body" id="response">
         </div>
       </div>
+
+      <div class="panel panel-default" id="response-panel-1">
+        <div class="panel-heading"><label>user_message</label></div>
+        <div class="panel-body" id="response-1">
+        </div>
+      </div>
+
     </div>
     <script src="https://checkout.culqi.com/v2/"></script>
     <script src="waitMe.min.js"></script>

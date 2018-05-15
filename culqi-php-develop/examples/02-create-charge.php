@@ -19,9 +19,9 @@ try {
   // Creando Cargo a una tarjeta
   $charge = $culqi->Charges->create(
       array(
-        "amount" => 100,
+        "amount" => 300,
         "currency_code" =>$_POST["moneda"],
-        "email" => $_POST["email"],
+        "email" => "validar-comercio@culqi.com",
         "source_id" => $_POST["token"]
         )
   );
