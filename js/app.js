@@ -12,6 +12,9 @@ $('#miBoton').on('click', function (e) {
         moneda = "USD";
       }
     Culqi.publicKey = $("#publica").val();
+    Culqi.options({
+      installments: true
+    });
     Culqi.settings({
       title: 'Culqi Store',
       currency: moneda,
@@ -32,7 +35,7 @@ $('#miBoton').on('click', function (e) {
         $.ajax({
            type: 'POST',
            url: '../culqi-php-develop/examples/02-create-charge.php',
-           data: { token: Culqi.token.id , moneda , secreta , email: Culqi.token.email },
+           data: { token: Culqi.token.id , moneda , secreta , email: Culqi.token.email , cuota: Culqi.token.metadata.installments},
            datatype: 'json',
            success: function(data) {
              var result = "";

@@ -22,7 +22,8 @@ try {
         "amount" => 300,
         "currency_code" =>$_POST["moneda"],
         "email" => $_POST["email"],
-        "source_id" => $_POST["token"]
+        "source_id" => $_POST["token"],
+        "installments" => $_POST["cuotas"]
         )
   );
   // Response
